@@ -8,7 +8,7 @@ import org.springframework.data.cassandra.mapping.Table;
 
 
 @Table("product")
-public class Product {
+public class Food {
 
 	@Id
 	@PrimaryKey
@@ -16,11 +16,11 @@ public class Product {
 	private String name;
 	private int price;
 	
-	public Product() {
+	public Food() {
 		
 	}
 	
-	public Product(String id, String name, int price) {
+	public Food(String id, String name, int price) {
 		super();
 		this.id = id;
 		this.name = name;

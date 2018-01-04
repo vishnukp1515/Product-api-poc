@@ -3,18 +3,18 @@ package packageapi.models;
 import javax.persistence.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "product", type = "products")
-public class ProductElastic {
+@Document(indexName = "food", type = "foods")
+public class FoodElastic {
 	
 	@Id
 	private String id;
 	private String name;
 	private int price;
-	public ProductElastic() {
+	public FoodElastic() {
 		
 	}
 	
-	public ProductElastic(String id, String name, int price) {
+	public FoodElastic(String id, String name, int price) {
 		super();
 		this.id = id;
 		this.name = name;

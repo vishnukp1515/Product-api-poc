@@ -15,7 +15,7 @@ import java.net.InetAddress;
 
 
 @Configuration
-public class CassandraConfig extends AbstractCassandraConfiguration {
+public class Configurations extends AbstractCassandraConfiguration {
 
     public static final String KEYSPACE = "product";
 
@@ -52,11 +52,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 				  new InetSocketTransportAddress(InetAddress.getByName(EsHost), EsPort));
     }
 
-    @Bean
-    public ElasticsearchOperations elasticsearchTemplate() throws Exception {
-        return new ElasticsearchTemplate(client());
-    }
-  
     @Override
     public String[] getEntityBasePackages() {
         return new String[]{"packageapi.repository"};
