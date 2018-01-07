@@ -11,6 +11,10 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class FoodApplication {
 
+	FoodApplication() {
+
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(FoodApplication.class, args);
 	}
