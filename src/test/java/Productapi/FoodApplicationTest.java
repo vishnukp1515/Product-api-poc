@@ -11,17 +11,10 @@ import packageapi.FoodApplication;
 @SpringBootTest
 @SpringBootConfiguration
 public class FoodApplicationTest {
-
-        @Test
-        public void contextLoads() {
-        }
     @Test
     public void test() {
         FoodApplication.main(new String[]{
                 "--server.port = 8080",
-                "--elasticsearch.port = 9300",
-//                "--spring.data.cassandra.port=9042",
-
         });
     }
 
