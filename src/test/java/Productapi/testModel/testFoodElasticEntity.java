@@ -6,16 +6,20 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
 import packageapi.models.FoodElastic;
+import packageapi.service.FoodElasticService;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 @RunWith(MockitoJUnitRunner.class)
 public class testFoodElasticEntity {
     ObjectMapper objectMapper = new ObjectMapper();
     String id="2";
-    @InjectMocks
-    private FoodElastic food;
+    @Test
+    public void testSomeMethod() {
+    FoodElastic component = new FoodElastic("2","lays",5);
+    }
     @Test
     public void testCategory() throws Exception {
         String expectedString = "{\"id\":\"" + id + "\",\"name\":\"lays\",\"price\":20}";

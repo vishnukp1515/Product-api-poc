@@ -2,20 +2,15 @@ package Productapi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import packageapi.FoodApplication;
-
 @RunWith(SpringRunner.class)
-@SpringBootTest
-@SpringBootConfiguration
-public class FoodApplicationTest {
+//@SpringBootTest
+public class testFoodApp {
+
     @Test
-    public void test() {
-        FoodApplication.main(new String[]{
-                "--server.port = 8080",
-        });
+    public void contextLoads() {
     }
 
 }

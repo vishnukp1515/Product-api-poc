@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
 import packageapi.models.Food;
+import packageapi.models.FoodElastic;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,8 +14,10 @@ import static org.junit.Assert.assertEquals;
 public class testFoodEntity {
 
     ObjectMapper objectMapper = new ObjectMapper();
-    @InjectMocks
-    Food food;
+    @Test
+    public void testSomeMethod() {
+        Food component = new Food("2","lays",5);
+    }
 
     @Test
     public void testCategory() throws Exception {

@@ -48,6 +48,29 @@ public class testFoodController {
     }
 
     @Test
+    public void testPost() throws Exception {
+        MvcResult result = mockMvc.perform(post("/foods")
+                .accept(MediaType.APPLICATION_JSON)
+                .content(json)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
+        MockHttpServletResponse response = result.getResponse();
+        assertEquals(HttpStatus.OK.value(), response.getStatus());
+    }
+
+    @Test
+    public void testUpdate() throws Exception {
+        MvcResult result = mockMvc.perform(put("/foods/1")
+                .accept(MediaType.APPLICATION_JSON)
+                .content(json)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
+        MockHttpServletResponse response = result.getResponse();
+        assertEquals(HttpStatus.OK.value(), response.getStatus());
+    }
+
+
+    @Test
     public void testGetAll() throws Exception {
         MvcResult result = mockMvc.perform(get("/foods")
                 .accept(MediaType.APPLICATION_JSON)
@@ -71,28 +94,6 @@ public class testFoodController {
     public void testGetPrice() throws Exception {
         MvcResult result = mockMvc.perform(get("/foods/price/20/40")
                 .accept(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON))
-                .andReturn();
-        MockHttpServletResponse response = result.getResponse();
-        assertEquals(HttpStatus.OK.value(), response.getStatus());
-    }
-
-    @Test
-    public void testPost() throws Exception {
-        MvcResult result = mockMvc.perform(post("/foods")
-                .accept(MediaType.APPLICATION_JSON)
-                .content(json)
-                .contentType(MediaType.APPLICATION_JSON))
-                .andReturn();
-        MockHttpServletResponse response = result.getResponse();
-        assertEquals(HttpStatus.OK.value(), response.getStatus());
-    }
-
-    @Test
-    public void testUpdate() throws Exception {
-        MvcResult result = mockMvc.perform(put("/foods/1")
-                .accept(MediaType.APPLICATION_JSON)
-                .content(json)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andReturn();
         MockHttpServletResponse response = result.getResponse();
